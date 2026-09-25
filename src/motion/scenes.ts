@@ -6,29 +6,32 @@
 // ours, since the export has no positions for untranslated layers.
 import type { Tier } from '../analysis'
 import { toTrack, type MotionFile, type Track } from './timeline'
-import passByData from './data/pass-by.json'
-import approachRetreatData from './data/approach-retreat.json'
-import approachPeeData from './data/approach-pee.json'
+import passByData from '../../assets/motion/pass-by.json'
+import approachRetreatData from '../../assets/motion/approach-retreat.json'
+import approachPeeData from '../../assets/motion/approach-pee.json'
 
 /** Figma frame size the translation keyframes are authored in. */
 export const STAGE_W = 1920
 export const STAGE_H = 1350
 
-/** Sprite file (Figma layer name in comments) → width / height, so layers can be centred before the image loads. */
+/**
+ * Image under public/images/ (Figma layer name in comments; built from assets/figma by
+ * `npm run images`) → width / height, so layers can be centred before the image loads.
+ */
 const SPRITES = {
-  side: { file: 'side.webp', aspect: 664 / 597 }, // 시바-옆모습2_0002_제거-도구-편집 (Group 1)
-  sideLook: { file: 'side-look.webp', aspect: 386 / 361 }, // 강아지 옆으로보기
-  moreInterest: { file: 'stand-front.webp', aspect: 751 / 1000 }, // 좀 더 관심 갖기
-  frontLeft: { file: 'front-left.webp', aspect: 338 / 800 }, // 왼발 앞으로
-  frontRight: { file: 'front-right.webp', aspect: 344 / 800 }, // 오른발앞
-  closeupLook: { file: 'closeup-look.webp', aspect: 850 / 1100 }, // 강아지 가까이서 보기
-  closeupSniff: { file: 'closeup-sniff.webp', aspect: 669 / 1100 }, // 가까이서 보기2
-  back45: { file: 'back-45.webp', aspect: 439 / 631 }, // 시바_0003_시바-뒤45
-  back1: { file: 'back-1.webp', aspect: 334 / 804 }, // 뒷모습1
-  back2: { file: 'back-2.webp', aspect: 352 / 804 }, // 뒷모습2
-  puddle: { file: 'puddle.webp', aspect: 1 }, // 쉬
-  blushL: { file: 'blush-left.svg', aspect: 148 / 105 }, // Ellipse 1
-  blushR: { file: 'blush-right.svg', aspect: 148 / 105 }, // Ellipse 2
+  side: { file: 'dog/side.webp', aspect: 664 / 597 }, // 시바-옆모습2_0002_제거-도구-편집 (Group 1)
+  sideLook: { file: 'dog/side-look.webp', aspect: 386 / 361 }, // 강아지 옆으로보기
+  moreInterest: { file: 'dog/stand-front.webp', aspect: 751 / 1000 }, // 좀 더 관심 갖기
+  frontLeft: { file: 'dog/front-left.webp', aspect: 338 / 800 }, // 왼발 앞으로
+  frontRight: { file: 'dog/front-right.webp', aspect: 344 / 800 }, // 오른발앞
+  closeupLook: { file: 'dog/closeup-look.webp', aspect: 850 / 1100 }, // 강아지 가까이서 보기
+  closeupSniff: { file: 'dog/closeup-sniff.webp', aspect: 669 / 1100 }, // 가까이서 보기2
+  back45: { file: 'dog/back-45.webp', aspect: 439 / 631 }, // 시바_0003_시바-뒤45
+  back1: { file: 'dog/back-1.webp', aspect: 332 / 798 }, // 뒷모습1
+  back2: { file: 'dog/back-2.webp', aspect: 352 / 804 }, // 뒷모습2
+  puddle: { file: 'effects/puddle.webp', aspect: 1 }, // 쉬
+  blushL: { file: 'effects/blush-left.svg', aspect: 148 / 105 }, // Ellipse 1
+  blushR: { file: 'effects/blush-right.svg', aspect: 148 / 105 }, // Ellipse 2
 } as const
 type SpriteName = keyof typeof SPRITES
 
@@ -99,7 +102,7 @@ function build(data: MotionFile, layers: LayerSpec[]): Scene {
     layers: layers.map(([nodeId, sprite, place, alt]) => {
       const node = nodes.get(nodeId)
       if (!node) throw new Error(`motion node ${nodeId} missing`)
-      return { nodeId, src: `${import.meta.env.BASE_URL}sprites/${SPRITES[sprite].file}`, alt, box: place(sprite), track: toTrack(node) }
+      return { nodeId, src: `${import.meta.env.BASE_URL}images/${SPRITES[sprite].file}`, alt, box: place(sprite), track: toTrack(node) }
     }),
   }
 }

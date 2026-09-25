@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { cubicBezierAt, sample, toTrack, type Keyframe } from './timeline'
-import passBy from './data/pass-by.json'
+import passBy from '../../assets/motion/pass-by.json'
 
 describe('sample', () => {
   const linear: Keyframe[] = [

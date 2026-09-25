@@ -9,12 +9,14 @@
     "build": "tsc --noEmit && vite build",
     "prebuild": "node scripts/setup-assets.mjs",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "images": "node scripts/build-images.mjs"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "^0.10.14"
   },
   "devDependencies": {
+    "sharp": "0.33.5",
     "typescript": "^5.5.4",
     "vite": "^5.4.0",
     "vitest": "^2.0.5"

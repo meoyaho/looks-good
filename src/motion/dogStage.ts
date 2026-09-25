@@ -16,7 +16,7 @@ export class DogStage {
     this.world.className = 'stage-world'
     this.world.style.width = `${STAGE_W}px`
     this.world.style.height = `${STAGE_H}px`
-    this.world.style.backgroundImage = `url(${import.meta.env.BASE_URL}sprites/background.webp)`
+    this.world.style.backgroundImage = `url(${import.meta.env.BASE_URL}images/background.webp)`
     container.appendChild(this.world)
     new ResizeObserver(() => this.fit()).observe(container)
     this.fit()

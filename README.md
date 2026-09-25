@@ -36,11 +36,31 @@ npm run dev      # 처음 실행할 때 MediaPipe 모델(약 3.7MB)을 public/mo
 
 ## 구조
 
-- `src/analysis.ts`: 삼등분, 대칭, 점수, 등급 계산 (순수 함수, 테스트 포함)
-- `src/faceTracker.ts`: 웹캠과 MediaPipe Face Landmarker
-- `src/guideOverlay.ts`: 카메라 위에 삼등분 선과 중심선을 그립니다 (`?debug`에서만)
-- `src/motion/`: Figma 모션 JSON(`data/`) 재생기
-  - `timeline.ts`: 키프레임 샘플링 (hold, linear, cubic-bezier)
-  - `scenes.ts`: 노드 ID와 스프라이트 매핑, 배치 (low=pass-by, mid=approach-retreat, high=approach-pee)
-  - `dogStage.ts`: 1920×1350 무대를 화면에 맞춰 렌더링합니다
-- `src/main.ts`: 전체 흐름 (카메라 → 측정 → 자막 → 모션 → 결과 → 다시하기)
+```
+assets/
+  figma/     Figma에서 export한 원본 이미지 (Figma 레이어 이름 그대로, 사이트에 쓰는 것만)
+  motion/    Figma 모션 JSON (pass-by / approach-retreat / approach-pee)
+public/
+  images/    웹용 이미지 (assets/figma에서 생성, 커밋되어 있음)
+    background.webp
+    dog/       강아지 스프라이트
+    effects/   쉬 웅덩이, 볼터치
+scripts/
+  build-images.mjs   assets/figma → public/images 변환 (npm run images)
+  setup-assets.mjs   MediaPipe wasm·모델 준비 (dev/build 전에 자동 실행)
+src/
+  analysis.ts        삼등분, 대칭, 점수, 등급 계산 (순수 함수, 테스트 포함)
+  faceTracker.ts     웹캠과 MediaPipe Face Landmarker
+  guideOverlay.ts    카메라 위 삼등분 선과 중심선 (?debug에서만)
+  main.ts            전체 흐름 (카메라 → 측정 → 자막 → 모션 → 결과 → 다시하기)
+  motion/
+    timeline.ts      키프레임 샘플링 (hold, linear, cubic-bezier)
+    scenes.ts        모션 노드 ↔ Figma 레이어(이미지) 매핑과 배치
+    dogStage.ts      1920×1350 무대를 화면에 맞춰 렌더링
+```
+
+### 이미지 바꾸기
+
+1. Figma에서 같은 레이어 이름으로 다시 export해서 `assets/figma/`의 파일을 덮어씁니다.
+2. `npm run images`로 `public/images/`를 다시 만듭니다.
+3. 새 레이어를 추가했다면 `scripts/build-images.mjs`의 목록과 `src/motion/scenes.ts`의 `SPRITES`에 한 줄씩 추가합니다.
