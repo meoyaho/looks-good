@@ -41,6 +41,8 @@ export interface Box {
   top: number
   width: number
   height: number
+  /** Extra rotation in degrees around the box centre (e.g. to follow a tilted face). */
+  rotate?: number
 }
 
 export interface Layer {
@@ -87,9 +89,18 @@ const closeup = (heightScale = 1) => standingAt(STAGE_W / 2, CLOSEUP_BOTTOM, CLO
 const approaching = standingAt(STAGE_W / 2, 1180, 560)
 
 /** A point on the full-size closeup-look photo, given as fractions of its width/height. */
-function onCloseupLook(fx: number, fy: number, height: number): Placement {
+/**
+ * A box centred on a point of the closeup-look photo (fractions of its width/height),
+ * for when the photo is shown at `photoScale` (its layer scales around its bottom centre).
+ */
+function onCloseupLook(fx: number, fy: number, height: number, opts: { photoScale?: number; rotate?: number } = {}): Placement {
+  const { photoScale = 1, rotate } = opts
   const photo = closeup()('closeupLook')
-  return standingAt(photo.left + photo.width * fx, photo.top + photo.height * fy + height / 2, height)
+  const originX = photo.left + photo.width / 2
+  const originY = photo.top + photo.height
+  const cx = originX + (photo.left + photo.width * fx - originX) * photoScale
+  const cy = originY + (photo.top + photo.height * fy - originY) * photoScale
+  return (sprite) => ({ ...standingAt(cx, cy + height / 2, height)(sprite), rotate })
 }
 
 type LayerSpec = [nodeId: string, sprite: SpriteName, place: Placement, alt: string]
@@ -156,8 +167,11 @@ const approachPee = build(approachPeeData as MotionFile, [
   ['2530:868', 'closeupSniff', closeup(), '가까이서 기웃거리는 시바견'],
   // Stays on screen to the end: the dog gazing up at you.
   ['2530:867', 'closeupLook', closeup(), '반한 표정의 시바견'],
-  ['2534:116', 'blushL', onCloseupLook(0.3, 0.42, 70), ''],
-  ['2534:146', 'blushR', onCloseupLook(0.64, 0.6, 70), ''],
+  // Blush on the cheeks of 2530:867, which is held at scale 1.03 by the time it fades in (7340ms).
+  // The head is tilted ~80° (eyes at 46%,23% and 50%,46%; nose at 20%,35%), so each cheek sits
+  // muzzle-side of its eye and the ellipses are turned to follow the eye line.
+  ['2534:116', 'blushL', onCloseupLook(0.34, 0.25, 64, { photoScale: 1.03, rotate: 78 }), ''],
+  ['2534:146', 'blushR', onCloseupLook(0.39, 0.5, 64, { photoScale: 1.03, rotate: 78 }), ''],
 ])
 
 export const SCENES: Record<Tier, Scene> = {

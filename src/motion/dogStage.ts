@@ -39,6 +39,7 @@ export class DogStage {
       el.draggable = false
       el.style.width = `${layer.box.width}px`
       el.style.height = `${layer.box.height}px`
+      if (layer.box.rotate) el.style.transformOrigin = '50% 50%'
       this.world.appendChild(el)
       return el
     })
@@ -101,5 +102,5 @@ function applyLayer(el: HTMLImageElement, layer: Layer, t: number) {
   const sx = track.scaleX ? sample(track.scaleX, t) : 1
   const sy = track.scaleY ? sample(track.scaleY, t) : 1
   const rot = track.rotation ? sample(track.rotation, t) : 0
-  el.style.transform = `translate(${x}px, ${y}px) scale(${sx}, ${sy}) rotate(${rot}rad)`
+  el.style.transform = `translate(${x}px, ${y}px) scale(${sx}, ${sy}) rotate(${rot}rad)` + (box.rotate ? ` rotate(${box.rotate}deg)` : '')
 }
