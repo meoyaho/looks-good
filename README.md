@@ -11,6 +11,10 @@ npm run dev      # 처음 실행할 때 MediaPipe 모델(약 3.7MB)을 public/mo
 
 카메라는 `http://localhost`이나 HTTPS에서만 켜집니다.
 
+### 배포 (GitHub Pages)
+
+`main`에 푸시하면 `.github/workflows/deploy.yml`이 빌드해서 https://meoyaho.github.io/looks-good/ 에 배포합니다. 저장소 **Settings → Pages → Source**는 **GitHub Actions**여야 합니다. "Deploy from a branch"로 두면 빌드 안 된 소스가 그대로 올라가서 404가 납니다.
+
 ### 카메라 없이 모션 확인
 
 - `?scene=high` / `?scene=mid` / `?scene=low`: 모션만 재생합니다
