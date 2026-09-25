@@ -170,8 +170,8 @@ const approachPee = build(approachPeeData as MotionFile, [
   // Blush on the cheeks of 2530:867, which is held at scale 1.03 by the time it fades in (7340ms).
   // The head is tilted ~80° (eyes at 46%,23% and 50%,46%; nose at 20%,35%), so each cheek sits
   // muzzle-side of its eye and the ellipses are turned to follow the eye line.
-  ['2534:116', 'blushL', onCloseupLook(0.34, 0.25, 64, { photoScale: 1.03, rotate: 78 }), ''],
-  ['2534:146', 'blushR', onCloseupLook(0.39, 0.5, 64, { photoScale: 1.03, rotate: 78 }), ''],
+  ['2534:116', 'blushL', onCloseupLook(0.31, 0.26, 160, { photoScale: 1.03, rotate: 78 }), ''],
+  ['2534:146', 'blushR', onCloseupLook(0.36, 0.5, 160, { photoScale: 1.03, rotate: 78 }), ''],
 ])
 
 export const SCENES: Record<Tier, Scene> = {
