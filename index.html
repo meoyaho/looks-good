@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>멍평</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet" />
+    <!-- Linked here (not imported from JS) so the layout is styled from the first paint;
+         otherwise the camera card's centring transform animates in on load. -->
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="app" data-state="intro">
+      <div class="stage" id="stage" aria-hidden="true"></div>
+
+      <section class="camera-card" id="cameraCard" aria-label="카메라">
+        <div class="camera-view">
+          <video id="video" muted playsinline></video>
+          <canvas id="guide"></canvas>
+          <div class="hint" id="hint" role="status" aria-live="polite"></div>
+          <div class="progress" id="progress"><span></span></div>
+        </div>
+
+        <div class="intro" id="intro">
+          <h1>멍평</h1>
+          <p class="lede">
+            과연 외모에 기준이 있을까요?<br>결과는 지나가던 시바견이 알려줍니다.
+          </p>
+          <button class="btn-primary" id="startBtn">카메라 켜기</button>
+          <p class="error" id="introError" role="alert"></p>
+          <p class="fine">모든 분석은 이 기기 안에서만 이루어지고, 얼굴 이미지는 어디로도 전송되지 않아요.</p>
+        </div>
+      </section>
+
+      <div class="caption" id="caption"></div>
+
+      <section class="result" id="result" aria-live="polite" hidden>
+        <div class="result-card">
+          <p class="result-emoji" id="resultEmoji"></p>
+          <h2 class="result-text" id="resultText"></h2>
+
+          <button class="btn-primary" id="retryBtn">다시하기</button>
+          <p class="fine">재미로 보는 결과예요. 조명, 각도, 앞머리에 따라 달라질 수 있어요.</p>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

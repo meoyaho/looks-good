@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "playbackStyle": "loop",
+  "nodes": [
+    {
+      "node": "2530:866",
+      "timelineDurationMs": 8000,
+      "fields": [
+        {
+          "field": "motionTranslationX@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1962.2548828125 },
+            { "timeMs": 2000, "value": 757.0472412109375 },
+            { "timeMs": 5600, "value": 757 },
+            { "timeMs": 8000, "value": -431 }
+          ]
+        },
+        {
+          "field": "motionTranslationY@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 840.77880859375 },
+            { "timeMs": 355.739, "value": 827.5 },
+            { "timeMs": 740.598, "value": 840.77880859375 },
+            { "timeMs": 1069.537, "value": 827.5, "easingToNext": { "hold": true } },
+            { "timeMs": 1417.814, "value": 827.5, "easingToNext": { "hold": true } },
+            { "timeMs": 1722, "value": 827.5 },
+            { "timeMs": 2000, "value": 840.77880859375 },
+            { "timeMs": 5600, "value": 840.780029296875 },
+            { "timeMs": 5900, "value": 827.5 },
+            { "timeMs": 6200, "value": 840.780029296875 },
+            { "timeMs": 6500, "value": 827.5 },
+            { "timeMs": 6800, "value": 840.780029296875 },
+            { "timeMs": 7100, "value": 827.5 },
+            { "timeMs": 7400, "value": 840.780029296875 },
+            { "timeMs": 7700, "value": 827.5 },
+            { "timeMs": 8000, "value": 840.780029296875 }
+          ]
+        },
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 2000, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 5300, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 8000, "value": 100 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2530:865",
+      "timelineDurationMs": 8000,
+      "fields": [
+        {
+          "field": "motionRotation@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 453.651, "value": 0.5235987901687622, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 791.589, "value": 0, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 1124.948, "value": 0.5235987901687622, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 1417.814, "value": 0, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 1717.183, "value": 0.5235987901687622, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 2000, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 8000, "value": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2530:864",
+      "timelineDurationMs": 8000,
+      "fields": [
+        {
+          "field": "motionRotation@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0.5235987901687622, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 355.739, "value": 0, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 740.598, "value": 0.5235987901687622, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 1192.926, "value": 0, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 1568.697, "value": 0.5235987901687622, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 1986, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 8000, "value": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2530:869",
+      "timelineDurationMs": 8000,
+      "fields": [
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 2000, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 4000, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 5300, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 8000, "value": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2530:872",
+      "timelineDurationMs": 8000,
+      "fields": [
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 4000, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 8000, "value": 0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

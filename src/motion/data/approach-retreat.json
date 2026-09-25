@@ -1,0 +1,372 @@
+{
+  "version": 1,
+  "playbackStyle": "loop",
+  "nodes": [
+    {
+      "node": "2534:632",
+      "timelineDurationMs": 14040,
+      "fields": [
+        {
+          "field": "motionTranslationX@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1962.2548828125 },
+            { "timeMs": 2000, "value": 757.0472412109375 },
+            { "timeMs": 11640, "value": 757 },
+            { "timeMs": 14040, "value": -431 }
+          ]
+        },
+        {
+          "field": "motionTranslationY@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 840.77880859375 },
+            { "timeMs": 355.739, "value": 827.5 },
+            { "timeMs": 740.598, "value": 840.77880859375 },
+            { "timeMs": 1069.537, "value": 827.5, "easingToNext": { "hold": true } },
+            { "timeMs": 1417.814, "value": 827.5, "easingToNext": { "hold": true } },
+            { "timeMs": 1722, "value": 827.5 },
+            { "timeMs": 2000, "value": 840.77880859375 },
+            { "timeMs": 11640, "value": 840.780029296875 },
+            { "timeMs": 11940, "value": 827.5 },
+            { "timeMs": 12240, "value": 840.780029296875 },
+            { "timeMs": 12540, "value": 827.5 },
+            { "timeMs": 12840, "value": 840.780029296875 },
+            { "timeMs": 13140, "value": 827.5 },
+            { "timeMs": 13440, "value": 840.780029296875 },
+            { "timeMs": 13740, "value": 827.5 },
+            { "timeMs": 14040, "value": 840.780029296875 }
+          ]
+        },
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 2000, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 11340, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 100 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2534:638",
+      "timelineDurationMs": 14040,
+      "fields": [
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 2000, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2534:260",
+      "timelineDurationMs": 14040,
+      "fields": [
+        {
+          "field": "motionScaleX@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 1, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 3740, "value": 1.0800000429153442, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 1.0800000429153442 }
+          ]
+        },
+        {
+          "field": "motionScaleY@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 1, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 3740, "value": 1.0800000429153442, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 1.0800000429153442 }
+          ]
+        },
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 2739, "value": 0, "easingToNext": { "bezierValues": { "p1x": 0.5, "p1y": 0, "p2x": 0.5, "p2y": 1 } } },
+            { "timeMs": 2740, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 3740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2534:261",
+      "timelineDurationMs": 14040,
+      "fields": [
+        {
+          "field": "motionScaleX@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0.8500000238418579, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0.8500000238418579, "easingToNext": { "hold": true } },
+            { "timeMs": 3740, "value": 0.8500000238418579, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 4240, "value": 0.9200000166893005, "easingToNext": { "hold": true } },
+            { "timeMs": 4740, "value": 1.0499999523162842, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 5240, "value": 1.1200000047683716, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 1.1200000047683716 }
+          ]
+        },
+        {
+          "field": "motionScaleY@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0.8500000238418579, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0.8500000238418579, "easingToNext": { "hold": true } },
+            { "timeMs": 3740, "value": 0.8500000238418579, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 4240, "value": 0.9200000166893005, "easingToNext": { "hold": true } },
+            { "timeMs": 4740, "value": 1.0499999523162842, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 5240, "value": 1.1200000047683716, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 1.1200000047683716 }
+          ]
+        },
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 3740, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 4240, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 4740, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 5240, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2534:262",
+      "timelineDurationMs": 14040,
+      "fields": [
+        {
+          "field": "motionScaleX@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0.8999999761581421, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0.8999999761581421, "easingToNext": { "hold": true } },
+            { "timeMs": 4240, "value": 0.949999988079071, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 4740, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 5240, "value": 1.149999976158142, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 5740, "value": 1.2200000286102295, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 1.2200000286102295 }
+          ]
+        },
+        {
+          "field": "motionScaleY@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0.8999999761581421, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0.8999999761581421, "easingToNext": { "hold": true } },
+            { "timeMs": 4240, "value": 0.949999988079071, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 4740, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 5240, "value": 1.149999976158142, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 5740, "value": 1.2200000286102295, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 1.2200000286102295 }
+          ]
+        },
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 4240, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 4740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 5240, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 5740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2534:263",
+      "timelineDurationMs": 14040,
+      "fields": [
+        {
+          "field": "motionScaleX@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 6340, "value": 1, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 6840, "value": 1.0299999713897705, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 1.0299999713897705 }
+          ]
+        },
+        {
+          "field": "motionScaleY@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 6340, "value": 1, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 6840, "value": 1.0299999713897705, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 1.0299999713897705 }
+          ]
+        },
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 6340, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 6840, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2534:264",
+      "timelineDurationMs": 14040,
+      "fields": [
+        {
+          "field": "motionScaleX@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 5740, "value": 1, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 6340, "value": 1.0299999713897705, "easingToNext": { "hold": true } },
+            { "timeMs": 6840, "value": 1.0299999713897705, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 1.0299999713897705 }
+          ]
+        },
+        {
+          "field": "motionScaleY@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 5740, "value": 1, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 6340, "value": 1.0299999713897705, "easingToNext": { "hold": true } },
+            { "timeMs": 6840, "value": 1.0299999713897705, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 1.0299999713897705 }
+          ]
+        },
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 5740, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 6340, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 6840, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 7840, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2530:871",
+      "timelineDurationMs": 14040,
+      "fields": [
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 7840, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 8340, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2530:876",
+      "timelineDurationMs": 14040,
+      "fields": [
+        {
+          "field": "motionScaleX@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 8840, "value": 0.949999988079071, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 9340, "value": 0.8999999761581421, "easingToNext": { "hold": true } },
+            { "timeMs": 9840, "value": 0.8500000238418579, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 10340, "value": 0.7799999713897705, "easingToNext": { "hold": true } },
+            { "timeMs": 10840, "value": 0.7200000286102295, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 11340, "value": 0.6800000071525574, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0.6800000071525574 }
+          ]
+        },
+        {
+          "field": "motionScaleY@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 8840, "value": 0.949999988079071, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 9340, "value": 0.8999999761581421, "easingToNext": { "hold": true } },
+            { "timeMs": 9840, "value": 0.8500000238418579, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 10340, "value": 0.7799999713897705, "easingToNext": { "hold": true } },
+            { "timeMs": 10840, "value": 0.7200000286102295, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 11340, "value": 0.6800000071525574, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0.6800000071525574 }
+          ]
+        },
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 8840, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 9340, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 9840, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 10340, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 10840, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 11340, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "2530:875",
+      "timelineDurationMs": 14040,
+      "fields": [
+        {
+          "field": "motionScaleX@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 8340, "value": 1, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 8840, "value": 0.949999988079071, "easingToNext": { "hold": true } },
+            { "timeMs": 9340, "value": 0.8799999952316284, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 9840, "value": 0.8199999928474426, "easingToNext": { "hold": true } },
+            { "timeMs": 10340, "value": 0.75, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 10840, "value": 0.699999988079071, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0.699999988079071 }
+          ]
+        },
+        {
+          "field": "motionScaleY@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 1, "easingToNext": { "hold": true } },
+            { "timeMs": 8340, "value": 1, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 8840, "value": 0.949999988079071, "easingToNext": { "hold": true } },
+            { "timeMs": 9340, "value": 0.8799999952316284, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 9840, "value": 0.8199999928474426, "easingToNext": { "hold": true } },
+            { "timeMs": 10340, "value": 0.75, "easingToNext": { "bezierValues": { "p1x": 0.4000000059604645, "p1y": 0, "p2x": 0.20000000298023224, "p2y": 1 } } },
+            { "timeMs": 10840, "value": 0.699999988079071, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0.699999988079071 }
+          ]
+        },
+        {
+          "field": "opacity@-1:-1",
+          "keyframes": [
+            { "timeMs": 0, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 2740, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 8340, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 8840, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 9340, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 9840, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 10340, "value": 100, "easingToNext": { "hold": true } },
+            { "timeMs": 10840, "value": 0, "easingToNext": { "hold": true } },
+            { "timeMs": 14040, "value": 0 }
+          ]
+        }
+      ]
+    }
+  ]
+}
