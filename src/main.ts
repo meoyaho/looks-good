@@ -1,12 +1,12 @@
 import { aggregateMetrics, evaluate, measureFace, poseHint, type Evaluation, type FaceMetrics, type Tier } from './analysis'
+import { captureComplete, captureProgress } from './captureTiming'
 import { FaceTracker, type FaceFrame } from './faceTracker'
 import { drawGuide } from './guideOverlay'
 import { DogStage } from './motion/dogStage'
 
-type AppState = 'intro' | 'loading' | 'aligning' | 'scene' | 'result'
+type AppState = 'intro' | 'loading' | 'aligning' | 'confirmed' | 'scene' | 'result'
 
-/** Frames of a steady, frontal face averaged into one measurement (~1s of video). */
-const SAMPLE_FRAMES = 24
+const CONFIRMATION_MS = 1000
 const MIN_FACE_SIZE = 0.3
 const MAX_FACE_SIZE = 0.85
 const CAPTION_MS = 1600
@@ -15,6 +15,8 @@ const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as 
 const app = document.querySelector<HTMLElement>('.app')!
 const video = $<HTMLVideoElement>('video')
 const guide = $<HTMLCanvasElement>('guide')
+const cameraView = document.querySelector<HTMLElement>('.camera-view')!
+const captureStatus = $('captureStatus')
 const hint = $('hint')
 const progressFill = $('progress').firstElementChild as HTMLElement
 const caption = $('caption')
@@ -26,6 +28,7 @@ const DEBUG = new URLSearchParams(location.search).has('debug')
 const stage = new DogStage($('stage'))
 const tracker = new FaceTracker(video)
 let samples: FaceMetrics[] = []
+let captureStartedAt: number | null = null
 
 function setState(state: AppState) {
   app.dataset.state = state
@@ -38,6 +41,17 @@ function setHint(text: string, tone: 'wait' | 'ok' = 'wait') {
 
 function setProgress(fraction: number) {
   progressFill.style.transform = `scaleX(${fraction})`
+}
+
+function setCaptureStatus(state: 'searching' | 'adjusting' | 'measuring' | 'complete', text: string) {
+  cameraView.dataset.capture = state
+  captureStatus.textContent = text
+}
+
+function resetCapture() {
+  samples = []
+  captureStartedAt = null
+  setProgress(0)
 }
 
 /** Why this frame can't be measured, or null if it can. */
@@ -61,9 +75,9 @@ function trackLoop() {
 
 function handleFrame(frame: FaceFrame | null) {
   if (!frame) {
-    samples = []
-    setProgress(0)
-    setHint('얼굴이 보이지 않아요. 화면 가운데에 얼굴을 맞춰주세요')
+    resetCapture()
+    setCaptureStatus('searching', '얼굴 찾는 중')
+    setHint('얼굴이 보이지 않아요. 얼굴이 잘 보이게 맞춰주세요')
     if (DEBUG) drawGuide(guide, null, video.videoWidth, video.videoHeight, false)
     return
   }
@@ -72,20 +86,32 @@ function handleFrame(frame: FaceFrame | null) {
   if (DEBUG) drawGuide(guide, frame.points, video.videoWidth, video.videoHeight, !problem)
   if (problem) {
     // Only measure an uninterrupted run of good frames.
-    samples = []
-    setProgress(0)
+    resetCapture()
+    setCaptureStatus('adjusting', '얼굴 인식됨 · 자세 조정')
     setHint(problem)
     return
   }
 
+  captureStartedAt ??= performance.now()
   samples.push(measureFace(frame.points))
-  setProgress(samples.length / SAMPLE_FRAMES)
-  setHint('좋아요, 그대로 잠깐만요…', 'ok')
-  if (samples.length >= SAMPLE_FRAMES) {
+  const elapsed = performance.now() - captureStartedAt
+  setProgress(captureProgress(elapsed, samples.length))
+  setCaptureStatus('measuring', '얼굴 분석 중')
+  setHint('얼굴을 확인했어요. 잠시만 그대로 있어주세요', 'ok')
+  if (captureComplete(elapsed, samples.length)) {
     const evaluation = evaluate(aggregateMetrics(samples))
-    samples = []
-    void runScene(evaluation)
+    resetCapture()
+    setProgress(1)
+    void confirmCapture(evaluation)
   }
+}
+
+async function confirmCapture(evaluation: Evaluation) {
+  setState('confirmed')
+  setCaptureStatus('complete', '✓ 얼굴 분석 완료')
+  setHint('얼굴 분석 완료! 강아지를 불러볼게요', 'ok')
+  await new Promise((r) => setTimeout(r, CONFIRMATION_MS))
+  await runScene(evaluation)
 }
 
 const CAPTION_TEXT = '강아지가 지나갈 것 같다...!'
@@ -138,10 +164,10 @@ async function start() {
 function beginAligning() {
   result.hidden = true
   stage.clear()
-  samples = []
-  setProgress(0)
+  resetCapture()
   setState('aligning')
-  setHint('정면을 보고 얼굴을 화면 가운데에 맞춰주세요')
+  setCaptureStatus('searching', '얼굴 찾는 중')
+  setHint('정면을 보고 얼굴이 잘 보이게 맞춰주세요')
   requestAnimationFrame(trackLoop)
 }
 

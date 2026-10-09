@@ -65,7 +65,7 @@ button {
   will-change: transform, opacity;
 }
 
-.app:is([data-state='intro'], [data-state='loading'], [data-state='aligning']) .stage {
+.app:is([data-state='intro'], [data-state='loading'], [data-state='aligning'], [data-state='confirmed']) .stage {
   filter: blur(6px) brightness(0.8) saturate(0.9);
 }
 
@@ -111,6 +111,53 @@ button {
 
 .camera-view video {
   transform: scaleX(-1);
+}
+
+.camera-view::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 3px solid transparent;
+  border-radius: 16px;
+  pointer-events: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.camera-view[data-capture='adjusting']::after {
+  border-color: rgba(255, 203, 110, 0.9);
+}
+
+.camera-view[data-capture='measuring']::after,
+.camera-view[data-capture='complete']::after {
+  border-color: var(--ok);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+.capture-status {
+  position: absolute;
+  z-index: 1;
+  top: 22px;
+  left: 22px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(30, 20, 12, 0.78);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+}
+
+.capture-status:empty {
+  display: none;
+}
+
+.camera-view[data-capture='adjusting'] .capture-status {
+  background: rgba(144, 87, 21, 0.9);
+}
+
+.camera-view[data-capture='measuring'] .capture-status,
+.camera-view[data-capture='complete'] .capture-status {
+  background: rgba(46, 125, 84, 0.9);
 }
 
 .hint {
@@ -272,7 +319,12 @@ h1 {
 
 .app:is([data-state='scene'], [data-state='result']) .hint,
 .app:is([data-state='scene'], [data-state='result']) .progress,
+.app:is([data-state='scene'], [data-state='result']) .capture-status,
 .app:is([data-state='scene'], [data-state='result']) canvas {
+  display: none;
+}
+
+.app:is([data-state='scene'], [data-state='result']) .camera-view::after {
   display: none;
 }
 

@@ -9,6 +9,8 @@ npm install
 npm run dev      # 처음 실행할 때 MediaPipe 모델(약 3.7MB)을 public/models에 받아옵니다
 ```
 
+터미널에 표시된 Vite 주소(보통 `http://localhost:5173/`)로 접속하세요. VS Code Live Server의 `localhost:5500`이나 일반 정적 파일 서버로 루트 `index.html`을 열면 TypeScript 모듈이 변환되지 않아 MIME 타입 오류가 납니다.
+
 카메라는 `http://localhost`이나 HTTPS에서만 켜집니다.
 
 ### 배포 (GitHub Pages)
@@ -34,7 +36,7 @@ npm run dev      # 처음 실행할 때 MediaPipe 모델(약 3.7MB)을 public/mo
 | 대칭 점수 | 좌우 대응점 11쌍의 중심선 거리 차이와 높이 차이를 얼굴 폭으로 나눕니다. 10%에서 0점 |
 | 총점 | 두 점수의 평균. 65점 이상은 high, 40점 이상은 mid, 그 아래는 low |
 
-측정은 정면을 본 상태(yaw ±10°, pitch ±12°)로 연속 24프레임을 모아 중앙값으로 계산합니다.
+측정은 정면을 본 상태(yaw ±10°, pitch ±12°)를 최소 1.8초 유지하며 유효한 얼굴 측정값을 24개 이상 모아 중앙값으로 계산합니다. 얼굴이 보이지 않거나 자세·거리 조건을 벗어나면 진행 상태가 초기화됩니다. 완료 표시는 중앙 카메라에서 1초간 보여준 뒤 강아지 장면으로 넘어갑니다.
 
 **보정값**: MediaPipe의 맨 윗점(10)은 실제 헤어라인보다 이마 중간쯤에 있어서, 상안부에 `HAIRLINE_CORRECTION = 1.4`를 곱합니다. 이 값은 평균 얼굴 1장으로 맞춘 것이라 더 많은 얼굴로 다시 조정하는 편이 좋습니다.
 
